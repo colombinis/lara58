@@ -11,6 +11,15 @@
 |
 */
 
+Route::get('instalar', function () {
+    Artisan::call("storage:link");
+    Artisan::call("migrate");
+});
+
 Route::get('/', function () {
+    return view('holamundo');
+});
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
