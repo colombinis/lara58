@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('refresh', function () {
+        Artisan::call("migrate:refresh");
+});
+
 Route::get('instalar', function () {
     Artisan::call("storage:link");
     Artisan::call("migrate");
